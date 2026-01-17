@@ -7,9 +7,10 @@ public interface IWorldObject
 {
     long Id { get; }
     int LayerId { get; }
-    Rectangle BoundsTiles { get; } // in tile coords (x,y,w,h)
+    Vector2 PositionTiles { get; }
+    Rectangle BoundsTiles { get; }
+    ObjectSizeCategory SizeCategory { get; }
     
     bool IsSolidTile(int worldTileX, int worldTileY);
-
-    void Draw(SpriteBatch spriteBatch, Texture2D pixel, int tileSizePx);
+    void Draw(SpriteBatch sb, Texture2D pixel, int tileSizePx);
 }

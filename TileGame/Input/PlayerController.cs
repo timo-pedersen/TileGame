@@ -31,6 +31,6 @@ public sealed class PlayerController
 
         dir.Normalize();
         var desired = PlayerPosTiles + dir * _speedTilesPerSec * dt;
-        PlayerPosTiles = _collision.MoveWithCollision(PlayerPosTiles, desired);
+        PlayerPosTiles = _collision.ResolveMovement(PlayerPosTiles, desired);
     }
 }
